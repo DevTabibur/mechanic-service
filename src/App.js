@@ -1,18 +1,20 @@
-
+import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
+import Home from "./pages/Home/Home";
+import Services from "./pages/Services/Services";
+import Header from "./pages/shared/Header/Header";
 
 function App() {
   return (
     <>
-    <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <button class="btn">Button</button>
-<button class="btn btn-primary">Button</button>
-<button class="btn btn-secondary">Button</button>
-<button class="btn btn-accent">Button</button>
-<button class="btn btn-ghost">Button</button>
-<button class="btn btn-link">Button</button>
-</>
+      <Header>
+        <Home></Home>
+        <About></About>
+        <Services></Services>
+
+        <Contact></Contact>
+      </Header>
+    </>
   );
 }
 
