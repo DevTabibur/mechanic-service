@@ -88,13 +88,11 @@ const Header = ({ children }) => {
     </>
   );
   return (
-    <div className="bg-white">
-    <div className="container mx-auto px-4">
       <div className="drawer drawer-end">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           {/* <!-- Navbar --> */}
-          <div className="w-full navbar ">
+          <div className="w-full navbar bg-white lg:px-20 fixed top-0 z-50 ">
             <div className="flex-1 px-2 mx-2 text-2xl">Mechanic World.</div>
 
             <div className="flex-none lg:hidden">
@@ -132,8 +130,6 @@ const Header = ({ children }) => {
           </ul>
         </div>
       </div>
-    </div>
-    </div>
   );
 };
 
