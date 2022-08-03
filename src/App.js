@@ -8,6 +8,10 @@ import Services from "./pages/Services/Services";
 import RequireAuth from "./authentication/RequireAuth";
 import About from "./pages/About/About";
 import { privateRoute } from "./routes/privateRoute";
+import RequireAdmin from "./authentication/RequireAdmin";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import AddServices from "./pages/Dashboard/AddServices/AddServices";
+import AddAdmin from "./pages/Dashboard/AddAdmin/AddAdmin";
 
 function App() {
   // AOS animation
@@ -19,17 +23,24 @@ function App() {
     <>
       <Header>
         <Routes>
-
           {publicRoute.map(({ path, name, Component }, index) => (
             <Route key={index} path={path} element={<Component />} />
           ))}
-           {/* protected route */}
+          {/* protected route */}
           <Route element={<RequireAuth></RequireAuth>}>
             {privateRoute.map(({ path, name, Component }, index) => (
-            <Route key={index} path={path} element={<Component />} />
-          ))}
+              <Route key={index} path={path} element={<Component />} />
+            ))}
           </Route>
 
+          {/* Admin Route */}
+          <Route element={<RequireAdmin />}>
+            <Route path="/dashboard" element={<Dashboard />}>
+            {/* nested route */}
+              <Route path="add-services" element={<AddServices />} />
+              <Route path="add-admin" element={<AddAdmin />} />
+            </Route>
+          </Route>
         </Routes>
       </Header>
     </>

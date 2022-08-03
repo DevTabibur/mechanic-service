@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const useAdmin = () => {
-  return (
-    <div>useAdmin</div>
-  )
-}
+  const [admin, setAdmin] = useState(true);
 
-export default useAdmin
+  return [admin];
+};
+
+export default useAdmin;
